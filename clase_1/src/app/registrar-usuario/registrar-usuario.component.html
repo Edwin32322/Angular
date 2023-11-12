@@ -1,32 +1,41 @@
 
 
 <div class="container">
-  <div class="row">
-      <div class="col">
-
+  <div class="card">
+    <div class="card-header">
+      REGISTRAR USUARIO
+    </div>
+    <div class="card-body">
+      <form action="" [formGroup]="myForm" (ngSubmit) = "onSubmit()" class="form">
+      <div class="campo">
+        <label for="">Usuario<input formControlName="usuarioCampo" type="text" id="" [(ngModel)]="usuario"></label>
       </div>
-      <div class="col">
-          <div class="card">
-              <div class="card-header">
-                  REGISTRAR USUARIO
-              </div>
-              <div class="card-body">
-
-                <div class="contents">
-                  <label for="">Usuario<input type="text" id="" [(ngModel)]="correo"></label>
-                </div>
-
-                <div class="contents">
-                  <label for="">Contraseña<input type="password"  id=""  [(ngModel)]="password"></label>
-                </div>
-
-                  <button class="btn btn-primary" (click)="registrarUsuario()">Registrar Usuario</button>
-              </div>
-          </div>
+      <div class="campo">
+        <label for="">Correo<input formControlName="correoCampo" type="text"[(ngModel)]="correo" id=""></label>
       </div>
-
-      <div class="col">
-
+      <div class="campo">
+        <label for="">Contraseña<input formControlName="passwordCampo" type="text" [(ngModel)]="password" id=""></label>
       </div>
+      <div class="campo">
+        <label for="">Teléfono<input formControlName="telefonoCampo" type="number" [(ngModel)]="telefono" id=""placeholder=""></label>
+      </div>
+      <div class="campo">
+        <label for="">Num.Documento<input formControlName="numDocCampo" type="text" [(ngModel)]="numDoc" id=""></label>
+      </div>
+      <div class="campo">
+        <label for="">Tipo Documento
+          <select [(ngModel)]="tipoDoc" formControlName="tipoDocCampo" id="tipoDocCampo" name="tipoDocCampo">
+            <option value="">Seleccione una opción...</option>
+            <option *ngFor="let opcion of opcionesSelect" [value]="opcion">{{ opcion }}</option>
+          </select>
+        </label>
+        
+        
+      </div>
+      <div class="button">
+        <button type="submit" class="btn btn-dark">Registrar Usuario</button>
+      </div>
+      </form>
+    </div>
   </div>
 </div>

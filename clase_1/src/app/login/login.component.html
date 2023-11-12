@@ -1,25 +1,26 @@
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-
+    <div class="card">
+        <div class="card-header">
+            LOGIN
         </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-header">
-                    LOGIN
+        <div class="card-body">
+            <img src="../../assets/img/login.png" alt="" width="100px">
+            <form class="form" [formGroup]="myForm"  (ngSubmit)="onSubmit()" novalidate>
+                <div class="campo">
+                    <label for="">Correo:<input type="email" id="" formControlName="correoCampo" [(ngModel)]="correo" placeholder="Correo"></label>
                 </div>
-                <div class="card-body">
-                        <label for="">Usuario<input type="text" id="" [(ngModel)]="usuario"></label>
-                        <label for="">Contraseña<input type="password"  id=""  [(ngModel)]="password"></label>
-                        <button class="btn btn-primary" (click)="iniciarSesion()">Iniciar Sesión</button>
-                        
+                <!-- <div *ngIf="correoCampo?.invalid && (correoCampo?.dirty || correoCampo?.touched)">
+                    <div *ngIf="correoCampo?.errors?.['required']">El correo electrónico es obligatorio.</div>
+                    <div *ngIf="correoCampo?.errors?.['email']">Ingresa un correo electrónico válido.</div>
+                  </div> -->
+                <div class="campo">
+                    <label for="">Contraseña:<input type="password"  id=""  formControlName="passwordCampo"  [(ngModel)]="password" placeholder="Password"></label>
                 </div>
-            </div>
-        </div>
-
-        <div class="col">
-
+                <div class="button">
+                    <button class="btn btn-dark">Iniciar Sesión</button>
+                </div>
+            </form>   
         </div>
     </div>
 </div>

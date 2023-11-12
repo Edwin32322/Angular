@@ -18,9 +18,12 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="/dashboard">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
+      <a class="nav-link" href="/registrar">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Registrar Cliente</span></a>
       </li>
 
       <!-- Divider -->
@@ -55,18 +58,18 @@
         </form>
 
         <!-- Topbar Search -->
-        <form
+        <div
         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group">
-          <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+          <input type="text" [(ngModel)]="buscar" (input)="onChange()" class="form-control bg-light border-0 small" placeholder="Search for..."
           aria-label="Search" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-primary" type="button">
-              <i class="fas fa-search fa-sm"></i>
+              <i class="fas fa-search fa-sm">Buscar</i>
             </button>
           </div>
         </div>
-      </form>
+        </div>
 
 
 
@@ -119,17 +122,21 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
+                <th>Usuario</th>
                 <th>Correo</th>
-                <th>Contraseña</th>
-                <th>Eliminar</th>
-                <th>Actualizar</th>
+                <th>Password</th>
+                <th>Télefono</th>
+                <th>Num.Documento</th>
+                <th>Tipo Doc.</th>
               </tr>
             </thead>
             <tbody *ngFor="let i of usuario">
               <td>{{i.usuario}}</td>
+              <td>{{i.correo}}</td>
               <td>{{i.password}}</td>
-              <td><a href="#">Eliminar</a></td>
-              <td><a href="#">Editar</a></td>
+              <td>{{i.telefono}}</td>
+              <td>{{i.numDoc}}</td>
+              <td>{{i.tipoDoc}}</td>
             </tbody>
           </table>
         </div>

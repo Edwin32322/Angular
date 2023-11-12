@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto:ital,wght@0,300;0,700;1,300&display=swap');
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.card{
+    display: flex;
+    border: none;
+    background-color: #f3f1f1;
+    border: 1px solid #3636d8;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    border-radius: 20px;
+}
+.card-body{
+    width: 100%;
+    text-align: center;
+}
+.card-body > form {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.campo > label{
+    width: 100%;
+    font-weight: 700;
+}
+.card-body > form > .campo > label > input {
+    border: 2px solid #3636d8;
+    height: 40px;
+    width: calc(100% - 4px);
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 8px;
+}
+
+.card-body > form > .campo > label > input:focus {
+    border-color: #4d42d4;
+    box-shadow: 0px 0px 4px 1px  #4d42d4;
+    outline: none; 
+}
+
+
+
+.card-header{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    border-radius: 19px 19px 0 0;
+    background-image: linear-gradient(240deg, #5058fe 0, #4131f1 25%, #424ed4);
+    font-size: 20px;
+    align-items: center;
+    height: 65px;
+    width: 100%;
+}
+.card-body > img{
+    margin-bottom: 15px;
+}
+.button{
+    padding: 10px;
+    border-top: 2px solid #2b24ee56;
+    display: flex;
+    justify-content: center;
+    grid-column: -1/1;
+}
+button{
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    background-image: linear-gradient(240deg, #5058fe 0, #4131f1 25%, #424ed4);
+}
+button:hover{
+    background: black;
+}
